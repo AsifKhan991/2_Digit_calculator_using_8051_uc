@@ -1,6 +1,6 @@
 ;Created: AUGUST 7, 2021
-;By- Md Asifuzzaman Khan
-;Inst:Islamic university of Technology
+;By Md Asifuzzaman Khan
+;Inst:Islamic university of Technology(IUT),OIC
 ;Project: 2 digit decimal Calculator based on AT89C51
 ;Course: EEE4706
 
