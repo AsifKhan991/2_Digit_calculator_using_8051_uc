@@ -1,5 +1,5 @@
-;Created: AUGUST 7, 2021
-;By Md Asifuzzaman Khan
+;Date Created: 7th AUGUST, 2021
+;Owner: Md Asifuzzaman Khan
 ;Inst:Islamic university of Technology(IUT),OIC
 ;Project: 2 digit decimal Calculator based on AT89C51
 ;Course: EEE4706
@@ -11,7 +11,7 @@ E EQU P3.2
 
 N1 EQU 50H ;HOLDS 1ST NUMBER
 N2 EQU 51H ;HOLDS 2ND NUMBER
-OP EQU 52H ;;HOLDS OPERATOR SIGN
+OP EQU 52H ;HOLDS OPERATOR SIGN
 
 MOV SP,#70H
 MOV PSW,#00H
@@ -194,16 +194,15 @@ LCALL PRINT_IN_BCD
 RET
 
 PRINT_IN_BCD:
-CLR A ; BCD = 0
-MOV R5,A
-MOV R4,A
-MOV R3,A
+MOV R5,#0
+MOV R4,#0
 MOV R2,#16 ; TO PROCESS 16 BITS
 
 BIN_10:
 MOV A,R7 ; BIN16 = BIN16 * 2
 ADD A,R7
 MOV R7,A
+
 MOV A,R6
 ADDC A,R6 ; CARRY = MSB of BIN16
 MOV R6,A
@@ -217,11 +216,6 @@ MOV A,R4
 ADDC A,R4
 DA A
 MOV R4,A
-
-MOV A,R3
-ADDC A,R3
-DA A
-MOV R3,A
 
 DJNZ R2,BIN_10
 
